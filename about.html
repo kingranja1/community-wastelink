@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us | Community Waste Link</title>
+
+    <style>
+
+        
+/* GENERAL PAGE STYLING */ 
+*{
+    padding: 0; 
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #faf4be;
+    color: #333;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+/* HEADER */
+
+header {
+    background-color: #0e4c31;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 18px;
+}
+
+header h2 {
+    margin: 0 0 15px;
+}
+
+nav {
+    margin: 8px;
+    padding: 10px;
+    height: auto;
+    width: auto;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    margin: 4px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    color: rgb(255, 251, 251);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #bae8aa;
+    background-color: yellowgreen;
+}
+
+
+
+/* ABOUT INTRODUCTION */
+
+.about-intro {
+    background-color: #f9fff9;
+    padding: 50px 30px;
+    margin: 30px auto;
+    text-align: center;
+    border-radius: 12px;
+    max-width: 1100px;
+}
+
+.about-intro h1 {
+    color: #176b3a;
+    font-size: 30px;
+    font-family: Georgia, serif;
+    margin-bottom: 25px;
+}
+
+.about-intro p {
+    color: #0d0e0dad;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 950px;
+    margin: 15px auto;
+}
+
+
+/* WHO WE ARE */
+
+.Who-we-are {
+    background-color: rgb(224, 240, 215);
+    padding: 40px 30px;
+    margin: 30px auto;
+    text-align: center;
+    max-width: 1100px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.Who-we-are h2 {
+    color: #176b3a;
+    font-size: 30px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #164B32;
+    padding-bottom: 11px;
+    display: inline-block;
+    width: 180px; 
+}
+
+.Who-we-are p {
+    color: #444;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 15px auto;
+}
+
+
+/* MISSION AND VISION */
+
+.mission-vision {
+    display: flex;
+    gap: 25px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 1100px;
+}
+
+.mission, .vision {
+    flex: 1;
+    background-color: #def8de;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.mission-vision h2 {
+    color: #176b3a;
+    font-size: 26px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #232524;
+    padding-bottom: 11px;
+    display: inline-block;
+    width: 180px;
+}
+
+.mission-vision p {
+    color: #444;
+    font-size: 16px;
+    line-height: 1.4 ;
+}
+
+
+/* OBJECTIVES */
+
+.objectives {
+     background-image: url("images-about/about-objectives.jpg");
+     background-size: cover;
+     background-position: center;
+     min-height: 300px;
+
+
+    padding: 70px;
+    margin: 30px auto;
+    max-width: 1000px;
+    border-radius: 25px;
+    
+}
+
+.objectives h2 {
+    color: yellow;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.objectives p {
+    font-size: 30px;
+    color: yellow;
+}
+
+.objectives ul {
+    padding-left: 30px;
+    line-height: 2;
+}
+
+.objectives ul li {
+    color: whitesmoke;
+    font-size: 20px;
+    margin-bottom: 8px;
+    padding: 10px;
+}
+
+
+/* HOW IT WORKS */
+
+.how-it-works {
+    padding: 50px 40px;
+    background-color: #f2f9f3;
+    text-align: center;
+    margin: 30px auto;
+}
+
+.how-it-works h2 {
+    color: #174D36;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.how-it-works p {
+    color: #1b1414;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 850px;
+    margin: 15px auto;
+}
+
+.how-it-works ol {
+    max-width: 800px;
+    margin: 25px auto;
+    text-align: left;
+    line-height: 2;
+}
+
+.how-it-works ol li {
+    padding: 8px;
+    color: #444;
+}
+
+
+/* FOOTER */
+
+.footer {
+    background-color: #08421f;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    box-sizing:border-box;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 18px;
+}
+
+.footer h3 {
+    font-size: 24px;
+}
+
+.footer p {
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+
+/* MOBILE SCREEN RESPONSIVENESS */
+
+@media (max-width: 768px) {
+
+    nav ul {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .mission-vision {
+        flex-direction: column;
+    }
+
+    .about-intro h1 {
+        font-size: 28px;
+    }
+
+    .about-intro,
+    .Who-we-are,
+    .objectives,
+    .how-it-works {
+        margin: 15px;
+        padding: 25px 20px;
+    }
+
+}
+
+/* About Us Images */
+
+.about-intro img{
+    width: 45%;
+    max-width: 600px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 18px;
+    margin-top: 20px;
+}
+.about-images {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+.about-images img {
+    width: 45%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+    </style>
+
+    
+</head>
+<body>
+    <header>
+        <h2>Community Waste Link</h2>
+        <nav>
+            <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="report.html">Report a problem</a></li>
+      <li><a href="track-report.html">Track report</a></li>
+        <li><a href="recycling.html">Recycling and material reuse</a></li>
+        <li><a href="Collections.html">Collection points</a></li>
+        <li><a href="wastemanagement.html">Waste seperation and Safe disposal</a></li>
+        <li><a href="Authorised.html">Authorized waste collectors</a></li>
+        <li><a href="notices.html">Notices</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        
+        </nav>
+    </header>
+    <main>
+        <section class="about-intro">
+            <h1>About Community Waste Link</h1>
+            <p>Building cleaner, healthier and more sustainable communities through effective waste management.</p>
+            <p>Community Waste Link is a proposed digital platform designed to improve waste management in informal settlements within different communities such as Kireka division, Kampala. We connect residents, local leaders, and authorised waste collectors through accessible and user-friendly digital tools. Our platform aims to enhance waste collection, recycling, and disposal processes, ultimately contributing to cleaner and healthier communities.</p>
+
+<img src="images-about/about_cleanup.jpg" 
+ alt="community members taking part in a clean-up">
+ <img src="images-about/about_cleanup2.jpg"
+ alt="community waste management activities">
+        
+
+        
+        
+
+
+        </section>
+        <section class="Who-we-are">
+
+            <h2>Who We Are</h2>
+            <p>We are a community-focused initiative and committed to creating sustainable solutions to waste management challenges in informal settlements.</p>
+            <p> Our aim is to make waste collection information easily accessible while encouraging residents to take responsibility for their waste and keeping their surroundings clean.</p>
+        </section>
+
+    <section class="mission-vision">
+        <div class="mission">
+            <h2>Our Mission</h2>
+            <p>Our mission is to promote responsible waste management by providing reliable information, encouraging proper waste disposal and strengthening communication between residents, local leaders and waste collectors.</p>
+        
+
+        </div>
+        <div class="vision">
+            <h2>Our Vision</h2>
+            <p>Our vision is to see cleaner, healthier and more sustainable communities where everyone takes part in protecting the environment through proper waste management.</p>
+            
+        
+        </div>
+    </section> 
+    <section class="objectives">
+        <h2>Our Objectives</h2>
+        <p>Our objectives include:</p> 
+        <ul>
+            <li>Improving waste collection efficiency within communities.</li>
+            <li>Encouraging recycling and proper waste disposal.</li>
+            <li>Increase community engagement in waste management.</li>
+            <li>Provide accessible waste collection information and resources.</li>
+            <li>Strengthen partnerships with local authorities and waste management organisations.</li>
+            <li>Support sustainable waste management practices and policies.</li>
+            <li>Promote environmental education and awareness.</li>
+        </ul>
+    </section>
+    <section class="how-it-works">
+        <h2>How Community Waste Link Works</h2>
+        <p>Community Waste Link connects residents, local leaders, and authorised waste collectors through a user-friendly digital platform. The system facilitates efficient waste collection, promotes recycling, and disposal processes while promoting community involvement and environmental responsibility.</p>
+        <ol>
+            <li>Residents can check waste collection schedules, recycling guidelines, and proper disposal methods.</li>
+            <li>Local leaders can share important announcements, updates and coordinate community waste management activities.</li>
+            <li>Authorised waste collectors can receive collection requests, organise collection routes and report any issues encountered during waste collection.</li>
+            <li>The platform also provides educational resources and tips for residents to encourage responsible waste management practices.</li>
+            <li>Community members can submit feedback and report waste-related problems within their communities.</li>
+        </ol>
+    </section>
+</main>
+
+<footer class="footer">
+    <h3>Community Waste Link</h3>
+    <p>&copy; 2026 Community WasteLink - Kireka.
+         All rights reserved.</p>
+    <p>Email: cw@wastelink.org | Tuhaise jane mary</p> 
+</footer>
+</body>
+</html>

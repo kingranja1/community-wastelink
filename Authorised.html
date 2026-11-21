@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Authorised Waste Collectors | Community WasteLink</title>
+<style>
+*{
+  box-sizing:border-box;
+  font-family:Inter,system-ui,Arial,sans-serif;
+  padding:0;
+  margin:0;
+}
+
+body{
+  margin:0;
+  background:#f3f7f4;
+  color:#1a2b22;
+  padding:10px;
+  margin:10px;
+}
+nav{
+      margin: 14px 14px 0; /* Space around nav, so curve is visible */
+       position:sticky;
+      top:10px;
+      z-index:100;
+    }
+
+    ul {
+       
+      list-style-type: none; /* Removes bullet points */
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Clears floats */
+      background-color: black; /* Light brown nav background - high contrast with green */
+      border-radius: var(--radius); /* CURVED - same as main */
+     
+      
+    }
+
+    li { 
+      float: left; /* Makes list items sit side by side */
+    }
+
+    /* Links inside nav */
+    li a, .dropbtn {
+      display: inline-block; /* Allows padding */
+      color: white; /* White text on orange */
+      text-align: center; /* Center text in link */
+      padding: 14px 16px; /* Clickable area */
+      text-decoration: none; /* Removes underline */
+    }
+
+    /* Hover effect - turns dark green */
+    li a:hover, .dropdown:hover .dropbtn {
+      background-color: var(--dark); /* Dark on hover */
+    }
+
+    /* Dropdown container */
+    li.dropdown {
+      display: inline-block; /* Keeps dropdown inline */
+    }
+
+    /* Dropdown hidden menu */
+    .dropdown-content {
+      display: none; /* Hidden by default */
+      position: absolute; /* Floats over other content */
+      background-color: #f9f9f9; /* Light background */
+      min-width: 160px; /* Minimum width */
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Shadow for depth */
+      z-index: 1; /* Makes it sit on top of everything */
+      border-radius: 10px; /* Slight curve for dropdown */
+      overflow: hidden;
+    }
+
+    /* Links inside dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block; /* Stack vertically */
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {background-color: #f1f1f1;} /* Light hover */
+
+    .dropdown:hover .dropdown-content {
+      display: block; /* Shows dropdown on hover */
+    }
+.top{
+          background:darkgreen;
+          color:white;
+          padding:28px 20px
+        }
+        .wrap{
+          max-width:1000px;margin:0 auto
+        }
+    .brand{
+      display:flex;
+        justify-content:space-between;
+          align-items:center;
+           flex-wrap:wrap;
+           gap:12px
+    }
+
+    .brand h1{margin:4px 0 0;font-size:28px;line-height:1.1}
+
+.brand p{margin:6px 0 0;opacity:.9}
+
+.badge{
+  background:#ffc107;
+  color:#1a2b22;
+  padding:8px 12px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:13px
+}
+
+.card{
+  background:wheat;
+   border-radius:16px;
+      box-shadow:0 8px 30px rgba(0,0,0,.08);
+        margin:-18px 20px 20px;
+          padding:20px;
+            margin-top:10px;
+}
+    search{
+                width:100%;
+              padding:14px 16px;
+            border:2px solid #e2e8e5;
+          border-radius:12px;
+        font-size:16px;
+      outline:none
+    }
+    search:focus{
+      border-color:#0f5132
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:16px
+    }
+    th{
+      text-align:left;
+      background:#0f5132;
+      color:white;padding:14px;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.5px
+    }
+    th:first-child{
+      border-radius:10px 0 0 0
+    }
+     th:last-child{
+      border-radius:0 10px 0 0
+    }
+    td{
+      padding:0px 14px;
+        border-bottom:5px solid green; 
+          vertical-align:top
+    }
+    tr:last-child td{
+      border-bottom:none
+    } 
+
+    td a{
+      text-decoration:none; 
+      color:#0f5132;
+    }
+    name{
+      font-weight:800;
+      font-size:16px
+    }
+    area{
+      color:#5b6b62
+    }
+    contact{
+      line-height:1.5
+    }
+    contact a{
+      color:#0f5132;
+         text-decoration:none;
+           font-weight:600
+    }
+    fee{
+      font-weight:700
+    }
+    verified{
+      background:#e6f6ec;
+        color:#0f7a3d;
+          padding:6px 10px;
+            border-radius:999px;
+          font-size:12px;
+        font-weight:800;
+      white-space:nowrap
+    }
+    btn{
+      display:inline-block;
+        margin-top:8px;
+          padding:8px 12px;
+            border-radius:999px;
+              font-size:13px;
+                font-weight:700;
+                  text-decoration:none
+    }
+    call{
+      background:#0f5132; 
+      color:white
+    }
+    wa{
+      background:wheat;
+      color:#062a17
+    }
+    note{
+                  background:#fff8e1;
+               border:1px solid #ffe082;
+             padding:12px 14px;
+           border-radius:12px;
+        font-size:14px;
+      margin-top:16px
+    }
+   
+    .footer{
+      text-align:center;
+        color:white;
+          font-size:20px;
+            padding:0 20px 30px;
+            border-radius:18px;
+          background-color:darkgreen;
+        margin-top:10px;
+      padding-top:20px;
+    }
+
+@media(max-width:700px)
+{
+  table,thead,tbody,tr,th,td{display:block}
+  thead{display:none}
+  tr{border:1px solid #e8efeb;border-radius:14px;margin-bottom:12px;padding:8px}
+  td{border:none;padding:8px 10px}
+  
+  td:before{content:attr(data-label);
+    display:block;
+      font-size:11px;
+        text-transform:uppercase;
+          letter-spacing:.6px;
+            color:#8a9a92;
+              font-weight:700}
+}
+</style>
+
+</head>
+    <body>
+ 
+<div class="top"><div class="wrap">
+  <div class="brand">
+    <div><div style="font-size:13px;letter-spacing:1px;opacity:.8">COMMUNITY WASTELINK • </div>
+   
+    <h1>
+      Authorised Waste Collectors</h1>
+   
+      <p>Licensed & KCCA Verified collectors in your area. Pay only licensed collectors.</p></div>
+   
+      <div class="badge">✓ 5 Verified Collectors</div>
+  </div>
+  
+</div>
+
+</div>
+     <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="report.html">Report a problem</a></li>
+                <li><a href="track.html">Track report</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+
+<div class="wrap"><div class="card">
+   <input class="search" id="search" onkeyup="filter()" placeholder="🔍 Search by name or area... e.g. Banda, Kireka, Kinawataka">
+<p id="not found" style="display:none; color:red; text-align:center; font-weight:bold;">Area not found- No collectors cover this area yet.</p>
+ 
+<table id="table">
+    <thead><tr><th>Collector</th><th>Coverage</th><th>Contact</th><th>Fee</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr>
+        <td data-label="Collector"><div class="name">Binit</div><div class="area">Trusted Local Collector</div></td>
+        <td data-label="Coverage">Kireka Central, Kireka Hill</td>
+        <td data-label="Contact"><div class="contact"><a href="tel:0784316953">0784 316 953</a><br><a href="mailto:info@binit.ug">info@binit.ug</a><br><a class="btn call" href="tel:0700111222">📞 Call</a> <a class="btn wa" href="https://wa.me/256700111222">WhatsApp</a></div></td>
+        <td data-label="Fee"><span class="fee">10k - 20k / mo</span></td>
+        <td data-label="Status"><span class="verified">✓ KCCA VERIFIED</span></td>
+      </tr>
+      <tr>
+        <td data-label="Collector"><div class="name">Just CleanIt</div><div class="area">Trusted Local Collector</div></td>
+        <td data-label="Coverage">Banda A, Banda B</td>
+        <td data-label="Contact"><div class="contact"><a href="tel:0706829842">0706 829 842</a><br><a href="mailto:hello@justcleanit.ug">hello@justcleanit.ug</a><br><a class="btn call" href="tel:0700333444">📞 Call</a> <a class="btn wa" href="https://wa.me/256700333444">WhatsApp</a></div></td>
+        <td data-label="Fee"><span class="fee">10k - 20k / mo</span></td>
+        <td data-label="Status"><span class="verified">✓ KCCA VERIFIED</span></td>
+      </tr>
+      <tr>
+        <td data-label="Collector"><div class="name">Nabugabo</div><div class="area">Trusted Local Collector</div></td>
+        <td data-label="Coverage">Kinawataka, Acholi</td>
+        <td data-label="Contact"><div class="contact"><a href="tel:0700555666">0700 555 666</a><br><a href="mailto:nabugabo@clean.ug">nabugabo@clean.ug</a><br><a class="btn call" href="tel:0700555666">📞 Call</a> <a class="btn wa" href="https://wa.me/256700555666">WhatsApp</a></div></td>
+        <td data-label="Fee"><span class="fee">10k - 15k / mo</span></td>
+        <td data-label="Status"><span class="verified">✓ KCCA VERIFIED</span></td>
+      </tr>
+      <tr>
+        <td data-label="Collector"><div class="name">Villa Unique</div><div class="area">Trusted Local Collector</div></td>
+        <td data-label="Coverage">Kamuli road, Namugongo road, Namboole</td>
+        <td data-label="Contact"><div class="contact"><a href="tel:0700004730">0700004730</a><br><a href="mailto:villaunique@clean.ug">villaunique@clean.ug</a><br><a class="btn call" href="tel:0700004730">📞 Call</a> <a class="btn wa" href="https://wa.me/256700004730">WhatsApp</a></div></td>
+        <td data-label="Fee"><span class="fee">10k - 15k / mo</span></td>
+        <td data-label="Status"><span class="verified">✓ KCCA VERIFIED</span></td>
+      </tr>
+      <tr>
+        <td data-label="Collector"><div class="name">Atlas Cleaning service</div><div class="area">Trusted Local Collector</div></td>
+        <td data-label="Coverage">Kirinya, Agenda2000, Kito</td>
+        <td data-label="Contact"><div class="contact"><a href="tel:0779653488">0779 653 488</a><br><a href="mailto:atlascleaning@clean.ug">atlascleaning@clean.ug</a><br><a class="btn call" href="tel:0779653488">📞 Call</a> <a class="btn wa" href="https://wa.me/256779653488">WhatsApp</a></div></td>
+        <td data-label="Fee"><span class="fee">20k - 25k / mo</span></td>
+        <td data-label="Status"><span class="verified">✓ KCCA VERIFIED</span></td>
+      </tr>
+    </tbody>
+  </table>
+  
+</div></div>
+<p class="footer">&copy;  Community WasteLink 2026 Nuwagaba Wilber</p>
+<script>
+function filter(){
+  let q = document.getElementById('search').value.toLowerCase();
+  let found = 0;
+
+  document.querySelectorAll('#table tbody tr').forEach(r=>{
+    if(r.innerText.toLowerCase().includes(q)){
+      r.style.display = '';
+      found++;
+    } else {
+      r.style.display = 'none';
+    }
+  });
+
+  if(found == 0){
+    document.getElementById('not found').style.display = 'block';
+  } else {
+    document.getElementById('not found').style.display = 'none';
+  }
+}
+</script>
+  
+</body>
+</html> 

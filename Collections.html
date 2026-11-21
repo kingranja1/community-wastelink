@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Makes the page work well on phones and computers -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designated Collection Points Schedule - Community WasteLink</title>
+    <link rel="icon" type="images/png" href="images-collections/CWPNG.png">
+    <style>
+        /* Removes default browser spacing from all elements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* Sets the font for the whole page */
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Dark green background for the whole page body */
+        body {
+            background-color: #0F2E25;
+            /* Space around the page content */
+            padding: 18px;
+            color: #1a1a1a;
+        }
+
+        /* TOP HEADER - Dark Green like screenshot - STICKY */
+        .top-header {
+            background-color: #14382D;
+            border: 2px solid #FFF6E5;
+            /* Rounds the corners of the header */
+            border-radius: 16px;
+            padding: 22px 18px 18px;
+            /* Centers the title and nav */
+            text-align: center;
+            margin-bottom: 18px;
+            /* Keeps header fixed at top when scrolling */
+            position: sticky;
+            top: 10px;
+            /* Makes header stay above other content */
+            z-index: 100;
+            /* Adds shadow under sticky header */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
+
+        /* Main title - Community WasteLink */
+        .top-header h1 {
+            color: #ffffff;
+            font-size: 32px;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        /* Subtitle under the main title */
+        .top-header p {
+            color: #FFF6E5;
+            font-size: 14px;
+        }
+
+        /* NAV - Red buttons like screenshot */
+        .nav {
+            /* Puts nav links in a row */
+            display: flex;
+            /* Allows links to move to next line on small screens */
+            flex-wrap: wrap;
+            /* Centers the nav links */
+            justify-content: center;
+            /* Space between nav buttons */
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        /* Style for each nav link / button */
+        .nav a {
+            /* Red background for nav buttons */
+            background-color: #A52A2A;
+            color: white;
+            /* Removes underline from links */
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* Darker red when mouse is over a nav button */
+        .nav a:hover {
+            background-color: #8B1E1E;
+        }
+
+        /* Highlights the current page in the nav */
+        .nav a.active {
+            background-color: #C0392B;
+            outline: 2px solid white;
+        }
+
+        /* MAIN CREAM CARD - holds all collection points */
+        .main-card {
+            /* Cream background like in screenshot */
+            background-color: #FFF6E5;
+            border-radius: 16px;
+            padding: 24px 20px;
+            border: 2px solid #FFF6E5;
+            /* Prevents sticky header from covering the section */
+            scroll-margin-top: 180px;
+        }
+
+        /* Centers the section heading */
+        .sec-head {
+            text-align: center;
+            margin-bottom: 22px;
+        }
+
+        /* Heading - Designated Collection Points */
+        .sec-head h2 {
+            color: #14382D;
+            font-size: 28px;
+            margin-top: 6px;
+        }
+
+        /* Short description under the heading */
+        .sec-head p {
+            color: #555;
+            font-size: 14px;
+            margin-top: 6px;
+        }
+
+        /* GRID - arranges cards in columns */
+        .grid {
+            /* Creates responsive grid layout */
+            display: grid;
+            /* Cards adjust automatically to screen size */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            /* Space between cards */
+            gap: 16px;
+        }
+
+        /* CARDS - one card for each collection point */
+        .card {
+            background: #ffffff;
+            /* Dark green border around each card */
+            border: 2px solid #14382D;
+            border-radius: 12px;
+            padding: 18px;
+            /* Light shadow under each card */
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+        }
+
+        /* BADGE - shows the area name e.g. KIREKA CENTRAL */
+        .badge {
+            display: inline-block;
+            background-color: #A52A2A;
+            color: white;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            padding: 5px 10px;
+            /* Makes badge look like a pill */
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Name of the collection point */
+        .card h3 {
+            color: #14382D;
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        /* Details inside each card - landmark, hours, etc. */
+        .card p {
+            font-size: 14px;
+            /* Space between lines for easy reading */
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Makes labels like Landmark: Hours: bold and dark green */
+        .card p strong {
+            color: #14382D;
+        }
+
+        /* FOOTER - Dark Green like screenshot */
+        footer {
+            background-color: #14382D;
+            color: #FFF6E5;
+            text-align: center;
+            border-radius: 16px;
+            padding: 16px;
+            margin-top: 18px;
+            font-size: 13px;
+            line-height: 1.6;
+            border: 2px solid #FFF6E5;
+        }
+
+        /* Makes copyright text white and bold */
+        footer b {
+            color: white;
+        }
+
+        /* Makes page look good on small phones */
+        @media (max-width: 500px) {
+            /* Reduces header padding on phones */
+            .top-header { padding: 14px 10px 12px; }
+            /* Smaller title on phones */
+            .top-header h1 { font-size: 24px; }
+            /* Smaller section heading on phones */
+            .sec-head h2 { font-size: 22px; }
+            /* Smaller nav buttons on phones */
+            .nav a { padding: 6px 10px; font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER SECTION - Title and Navigation -->
+    <div class="top-header">
+        <!-- Website name -->
+        <h1>Community WasteLink</h1>
+        <!-- Welcome message -->
+        <p>Welcome to Community WasteLink</p>
+        <!-- NAVIGATION MENU -->
+        <div class="nav">
+            <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="report.html">Report a problem</a></li>
+      <li><a href="track-report.html">Track report</a></li>
+        <li><a href="recycling.html">Recycling and material reuse</a></li>
+        <li><a href="Collections.html">Collection points</a></li>
+        <li><a href="wastemanagement.html">Waste seperation and Safe disposal</a></li>
+        <li><a href="Authorised.html">Authorized waste collectors</a></li>
+        <li><a href="notices.html">Notices</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+        </div>
+    </div>
+
+    <!-- MAIN SECTION - All Collection Points -->
+    <section id="points" class="main-card">
+        <!-- Section heading -->
+        <div class="sec-head">
+             <h2>Designated Collection Points</h2>
+            <!-- Instructions for users -->
+            <p>Find your nearest official collection point in Kireka. Please use only these points.</p>
+        </div>
+
+        <!-- GRID - Holds all 4 cards -->
+        <div class="grid">
+            <!-- CARD 1 - Kireka Market Point -->
+            <div class="card">
+                <!-- Area badge -->
+                <span class="badge">KIREKA CENTRAL</span>
+                <!-- Point name -->
+                <h3>Kireka Market Point</h3>
+                <!-- Point details -->
+                <p><strong>Landmark:</strong> Behind market, 50m from Taxi Stage<br>
+                <strong>Hours:</strong> 6am - 6pm<br>
+                <strong>Accepted:</strong> Household waste in sacks<br>
+                <strong>Not accepted:</strong> Medical waste, construction debris</p>
+            </div>
+
+            <!-- CARD 2 - Banda Trading Centre -->
+            <div class="card">
+                <span class="badge">BANDA</span>
+                <h3>Banda Trading Centre</h3>
+                <p><strong>Landmark:</strong> Near Banda Police Post<br>
+                <strong>Hours:</strong> 6am - 7pm<br>
+                <strong>Rule:</strong> No dumping outside bins</p>
+            </div>
+
+            <!-- CARD 3 - Kinawataka Road Side -->
+            <div class="card">
+                <span class="badge">KINAWATAKA</span>
+                <h3>Kinawataka Road Side</h3>
+                <p><strong>Landmark:</strong> Opposite Mosque<br>
+                <strong>Hours:</strong> 6am - 6pm<br>
+                <strong>Note:</strong> Keep drain clear - flooding zone</p>
+            </div>
+
+            <!-- CARD 4 - Acholi Quarters Main -->
+            <div class="card">
+                <span class="badge">ACHOLI</span>
+                <h3>Acholi Quarters Main</h3>
+                <p><strong>Landmark:</strong> Near water tap<br>
+                <strong>Hours:</strong> 6am - 6pm<br>
+                <strong>Note:</strong> Shared by 120 households</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION - Copyright -->
+    <footer>
+        <b>© 2026 Community WasteLink - Kireka. All rights reserved.</b><br>
+        <!-- Author name -->
+        Odongo Emmanuel Lumumba • Community WasteLink
+    </footer>
+
+</body>
+</html>

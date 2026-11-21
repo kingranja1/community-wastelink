@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Track Report | Community WasteLink</title>
+
+    <style>
+        /* GENERAL SETTINGS */
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            padding: 10px;
+            margin: 10PX;
+            background: #EBF8FF;
+            color: #1B365D;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #0B3D2E;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color:  #16A34A;
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            text-align: center;
+            padding: 45px 15px;
+            background: #D8EEFF;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #465B70;
+        }
+
+        /* MAIN CONTAINER */
+
+        .container {
+            max-width: 950px;
+            margin: 35px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .card h2 {
+            margin-bottom: 15px;
+            font-size: 21px;
+        }
+
+        /* SEARCH SECTION */
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        input {
+            flex: 1;
+            padding: 13px;
+            border: 1px solid #B8CBDD;
+            border-radius: 6px;
+            outline: none;
+            font-size: 15px;
+            min-width: 0;
+        }
+
+        input:focus {
+            border-color:  #0E7A4F;
+        }
+
+        button {
+            background:  #0E7A4F;
+            color: white;
+            border: none;
+            padding: 13px 22px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background:  #16A34A;
+        }
+
+        .message {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .error {
+            color: #D62828;
+        }
+
+        .success {
+            color: #16803D;
+        }
+
+        /* REPORT DETAILS */
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .detail {
+            background: #EBF8FF;
+            padding: 14px;
+            border-radius: 7px;
+        }
+
+        .detail strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* STATUS BADGE */
+
+        .status-badge {
+            display: inline-block;
+            background: #D8EEFF;
+            color: #1B365D;
+            padding: 6px 13px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* PROGRESS TRACKER */
+
+        .progress-container {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 35px 5px 20px;
+            gap: 5px;
+        }
+
+        .progress-container::before {
+            content: "";
+            position: absolute;
+            top: 15px;
+            left: 10%;
+            width: 80%;
+            height: 5px;
+            background: #D8E1EA;
+            z-index: 0;
+        }
+
+        .progress-line {
+            position: absolute;
+            top: 15px;
+            left: 10%;
+            width: 0%;
+            height: 5px;
+            background: #16803D;
+            z-index: 1;
+            transition: width 0.4s;
+        }
+
+        .step {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            width: 25%;
+        }
+
+        .circle {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #D8E1EA;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #1B365D;
+        }
+
+        .step.completed .circle {
+            background: #16803D;
+            color: white;
+        }
+
+        .step.current .circle {
+            background: #1B365D;
+            color: white;
+            border: 3px solid #8BD3FF;
+        }
+
+        .step p {
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* HISTORY */
+
+        .history-item {
+            border-left: 4px solid #1B365D;
+            padding: 5px 15px 18px;
+            margin-left: 8px;
+        }
+
+        .history-item h3 {
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .history-item p {
+            color: #596B7D;
+            font-size: 14px;
+        }
+
+        .history-item small {
+            color: #16803D;
+        }
+
+        /* HELP SECTION */
+
+        .help {
+            background: #D8EEFF;
+            padding: 22px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .help a {
+            color: #1B365D;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #0B3D2E;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #8BD3FF;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        /* HIDE RESULTS BEFORE SEARCH */
+
+        #reportResults {
+            display: none;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+
+        @media (max-width: 600px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero h1 {
+                font-size: 25px;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .search-box button {
+                width: 100%;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step p {
+                font-size: 10px;
+            }
+
+            .circle {
+                width: 29px;
+                height: 29px;
+            }
+
+            .progress-container::before,
+            .progress-line {
+                top: 13px;
+            }
+
+            .container {
+                padding: 12px;
+            }
+        }
+
+    </style>
+</head>
+<link rel="icon" type="image/ico" href="images-track-report/fav.ico">
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            Community WasteLink
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="report.html">Report a Problem</a>
+            <a href="recycling.html">Recycling</a>
+            <a href="Collections.html">Collection points</a>
+            <a href="wastemanagement.html">Waste seperation and Safe disposal</a>
+            <a href="Authorised.html">Authorized waste collectors</a>
+            <a href="notices.html">Notices</a>
+            <a href="faq.html">FAQ</a>
+            
+        </nav>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <h1>Track  Waste Report</h1>
+
+        <p>
+            Follow the progress of  waste management complaint
+            in Kireka Division, Kampala.
+        </p>
+
+    </section>
+
+
+    <main class="container">
+
+
+        <!-- SEARCH SECTION -->
+
+        <section class="card">
+
+            <h2>🔍 Search  Report</h2>
+
+            <p>
+                Enter  unique report reference code
+                to check the current status of your complaint.
+            </p>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="referenceCode"
+                    placeholder="Example: CWL-2026-00125"
+                >
+
+                <button onclick="trackReport()">
+                    Search Report
+                </button>
+
+            </div>
+
+            <p id="message" class="message"></p>
+
+            <p style="margin-top:12px; font-size:13px;">
+                Demo reference codes:
+                CWL-2026-00125,
+                CWL-2026-00126,
+                CWL-2026-00127
+            </p>
+
+        </section>
+
+
+        <!-- REPORT RESULTS -->
+
+        <div id="reportResults">
+
+            <!-- REPORT DETAILS -->
+
+            <section class="card">
+
+                <h2>📋 Report Information</h2>
+
+                <div class="details-grid">
+
+                    <div class="detail">
+                        <strong>Reference Number</strong>
+                        <span id="ref"></span>
+                    </div>
+
+                    <div class="detail">
+                        <strong>Problem Type</strong>
+                        <span id="problem"></span>
+                    </div>
+
+                    <div class="detail">
+                        <strong>Location</strong>
+                        <span id="location"></span>
+                    </div>
+
+                    <div class="detail">
+                        <strong>Date Submitted</strong>
+                        <span id="date"></span>
+                    </div>
+
+                    <div class="detail">
+                        <strong>Current Status</strong>
+                        <span class="status-badge" id="status"></span>
+                    </div>
+
+                    <div class="detail">
+                        <strong>Responsible Team</strong>
+                        <span id="team"></span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PROGRESS SECTION -->
+
+            <section class="card">
+
+                <h2>📊 Report Progress</h2>
+
+                <p>
+                    Follow the progress of  complaint
+                    through the stages below.
+                </p>
+
+                <div class="progress-container">
+
+                    <div class="progress-line" id="progressLine"></div>
+
+                    <div class="step">
+                        <div class="circle">1</div>
+                        <p>Submitted</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="circle">2</div>
+                        <p>Assigned</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="circle">3</div>
+                        <p>In Progress</p>
+                    </div>
+
+                    <div class="step">
+                        <div class="circle">4</div>
+                        <p>Resolved</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- STATUS HISTORY -->
+
+            <section class="card">
+
+                <h2>🕒 Status Update History</h2>
+
+                <div id="history"></div>
+
+            </section>
+
+
+            <!-- HELP SECTION -->
+
+            <section class="help">
+
+                <h2>Need Help?</h2>
+
+                <p>
+                    If complaint has taken too long
+                    to be resolved, contact the responsible
+                    local leader or waste collection team.
+                </p>
+
+                <p style="margin-top:12px;">
+                    <a href="faq-contact.html">
+                        Contact Support 
+                    <button class="btn btn-gold" onclick="alert('Call LC Kireka: 0780 111 222 or KCCA: 0700 000 000')">📞 
+                        
+                    </button>
+                    </a>
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h3>Community WasteLink</h3>
+
+        <p>
+            Working together for a cleaner Kireka.
+        </p>
+
+       
+        <p style="margin-top:15px; font-size:13px;">
+            © 2026 Community WasteLink.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        // SAMPLE REPORT DATABASE
+        // These are demonstration records.
+
+        const reports = {
+
+            "CWL-2026-00125": {
+
+                reference: "CWL-2026-00125",
+
+                problem: "Missed Waste Collection",
+
+                location: "Kireka, Kampala",
+
+                date: "7 November 2026",
+
+                status: "In Progress",
+
+                team: "Kireka Waste Collection Team",
+
+                stage: 2,
+
+                history: [
+
+                    {
+                        title: "Report Submitted",
+                        time: "7 November 2026 - 9:00 AM",
+                        note: "Your waste collection complaint was received successfully."
+                    },
+
+                    {
+                        title: "Report Assigned",
+                        time: "7 November 2026 - 10:30 AM",
+                        note: "The complaint was assigned to the responsible collection team."
+                    },
+
+                    {
+                        title: "Work In Progress",
+                        time: "7 November 2026 - 1:00 PM",
+                        note: "The collection team has been notified and is working on the issue."
+                    }
+
+                ]
+
+            },
+
+
+            "CWL-2026-00126": {
+
+                reference: "CWL-2026-00126",
+
+                problem: "Illegal Dumping",
+
+                location: "Banda, Kireka",
+
+                date: "6 November 2026",
+
+                status: "Submitted",
+
+                team: "Not yet assigned",
+
+                stage: 0,
+
+                history: [
+
+                    {
+                        title: "Report Submitted",
+                        time: "6 November 2026 - 11:00 AM",
+                        note: "Your illegal dumping complaint has been received."
+                    }
+
+                ]
+
+            },
+
+
+            "CWL-2026-00127": {
+
+                reference: "CWL-2026-00127",
+
+                problem: "Overflowing Collection Point",
+
+                location: "Kireka Trading Centre",
+
+                date: "5 November 2026",
+
+                status: "Closed / Resolved",
+
+                team: "Kireka Waste Collection Team",
+
+                stage: 3,
+
+                history: [
+
+                    {
+                        title: "Report Submitted",
+                        time: "5 November 2026 - 8:00 AM",
+                        note: "Complaint successfully submitted."
+                    },
+
+                    {
+                        title: "Report Assigned",
+                        time: "5 November 2026 - 9:00 AM",
+                        note: "The complaint was assigned to the collection team."
+                    },
+
+                    {
+                        title: "Work In Progress",
+                        time: "5 November 2026 - 12:00 PM",
+                        note: "The collection team started clearing the overflowing point."
+                    },
+
+                    {
+                        title: "Report Resolved",
+                        time: "5 November 2026 - 4:00 PM",
+                        note: "The overflowing waste was removed successfully."
+                    }
+
+                ]
+
+            }
+
+        };
+
+
+        // TRACK REPORT FUNCTION
+
+        function trackReport() {
+
+            const code = document
+                .getElementById("referenceCode")
+                .value.trim().toUpperCase();
+
+            const message = document.getElementById("message");
+
+            const results = document.getElementById("reportResults");
+
+            // Check if the input is empty
+
+            if (code === "") {
+
+                results.style.display = "none";
+
+                message.textContent =
+                    "Please enter your report reference code.";
+
+                message.className = "message error";
+
+                return;
+
+            }
+
+
+            // Search for the report
+
+            const report = reports[code];
+
+
+            // Check whether report exists
+
+            if (!report) {
+
+                results.style.display = "none";
+
+                message.textContent =
+                    "Report not found. Please check your reference code.";
+
+                message.className = "message error";
+
+                return;
+
+            }
+
+
+            // Display success message
+
+            message.textContent =
+                "Report found successfully!";
+
+            message.className = "message success";
+
+
+            // Display report information
+
+            document.getElementById("ref").textContent =
+                report.reference;
+
+            document.getElementById("problem").textContent =
+                report.problem;
+
+            document.getElementById("location").textContent =
+                report.location;
+
+            document.getElementById("date").textContent =
+                report.date;
+
+            document.getElementById("status").textContent =
+                report.status;
+
+            document.getElementById("team").textContent =
+                report.team;
+
+
+            // Display progress stages
+
+            const steps = document.querySelectorAll(".step");
+
+            steps.forEach((step, index) => {
+
+                step.classList.remove("completed", "current");
+
+                if (index < report.stage) {
+
+                    step.classList.add("completed");
+
+                } else if (index === report.stage) {
+
+                    step.classList.add("current");
+
+                }
+
+            });
+
+
+            // Update progress line
+
+            const progress = (report.stage / 3) * 100;
+
+            document.getElementById("progressLine")
+                .style.width = progress + "%";
+
+
+            // Display report history
+
+            const history = document.getElementById("history");
+
+            history.innerHTML = "";
+
+            report.history.forEach(item => {
+
+                const entry = document.createElement("div");
+
+                entry.className = "history-item";
+
+                const heading = document.createElement("h3");
+                heading.textContent = item.title;
+
+                const time = document.createElement("small");
+                time.textContent = item.time;
+
+                const note = document.createElement("p");
+                note.textContent = item.note;
+
+                entry.append(heading, time, note);
+
+                history.appendChild(entry);
+
+            });
+
+
+            // Show report results
+
+            results.style.display = "block";
+
+        }
+
+
+        // Allow Enter key to search
+
+        document.getElementById("referenceCode")
+            .addEventListener("keydown", function(event) {
+
+                if (event.key === "Enter") {
+
+                    trackReport();
+
+                }
+
+            });
+
+    </script>
+
+</body>
+</html>

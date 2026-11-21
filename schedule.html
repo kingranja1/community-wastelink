@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Waste collection schedules</title>
+  <link rel="stylesheet" href="style.css">
+
+  
+</head>
+<body>
+  <header>
+    <p class="header" align="center">COMMUNITY WASTELINK</p>
+   
+   <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="report.html">Report a problem</a></li>
+      <li><a href="track-report.html">Track report</a></li>
+        <li><a href="recycling.html">Recycling and material reuse</a></li>
+        <li><a href="Collections.html">Collection points</a></li>
+        <li><a href="wastemanagement.html">Waste seperation and Safe disposal</a></li>
+        <li><a href="Authorised.html">Authorized waste collectors</a></li>
+        <li><a href="notices.html">Notices</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+
+        
+  </header>
+
+<section id="schedules">
+<div class="sec-head">
+<h2 style="text-align: center;">WASTE COLLECTION SCHEDULES</h2>
+</div>
+<label>Filter by Zone / Village</label>
+
+<select id="zoneFilter" onchange="filterSchedule()">
+  <option value="">All Zones</option>
+  <option>Kireka Central</option>
+  <option>Kireka Hill</option>
+  <option>Banda A</option>
+  <option>Banda B</option>
+  <option>Kinawataka</option>
+  <option>Acholi Quarters</option>
+</select>
+
+<table id="scheduleTable" style="margin-top:10px">
+  <tr>
+    <th>Zone</th>
+    <th>Days</th>
+    <th>Time</th>
+    <th>Point</th>
+    <th>Collector</th>
+  </tr>
+
+<tr>
+  <td>Kireka Central</td>
+  <td>Mon & Thu</td>
+  <td>7:00am-11:00am</td>
+  <td>Kireka Market</td>
+  <td>Semugabi Isaac</td>
+</tr>
+
+<tr>
+  <td>Kireka Hill</td>
+  <td>Mon & Thu</td>
+  <td>7:00am-11:00am</td>
+  <td>Hill Top</td>
+  <td>Kinyera Charles</td>
+</tr>
+
+<tr>
+  <td>Banda A</td>
+  <td>Tue & Fri</td>
+  <td>7:00am-11:00am</td>
+  <td>Banda Trading Centre</td>
+  <td>Kalungi Henry</td>
+</tr>
+
+<tr>
+  <td>Banda B</td>
+  <td>Tue & Fri</td>
+  <td>7:00am-11:00am</td>
+  <td>Banda Lower</td>
+  <td>Kikomeko Allan</td>
+</tr>
+
+<tr>
+  <td>Kinawataka</td>
+  <td>Wed & Sat</td>
+  <td>8:00am-12:00pm</td>
+  <td>Kinawataka Road</td>
+  <td>Namayanza Caro</td>
+</tr>
+
+<tr>
+  <td>Acholi Quarters</td>
+  <td>Wed & Sat</td>
+  <td>8:00am-12:00pm</td>
+  <td>Acholi Main</td>
+  <td>Ocen Peter</td>
+</tr>
+
+</table>
+
+<div class="card" style="margin-top:12px">
+  <h3>Household Preparation</h3>
+  <p>Sort organic vs inorganic, tie sacks, put out by 6:30am, keep point clean. No burning.</p>
+</div>
+<div class="notice"><b>Delay Notice:</b> Rainy season / truck breakdown may delay pickup by 1 day. Check News page.</div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Community WasteLink - Kireka. All rights reserved.</p>
+    <p>Student's Name: Opoka Taikun Denish</p>
+    <p>Course: BIT</p>
+    <p>Reg No: VU-BIT-2603-2502-DAY</p>
+
+</footer> 
+
+
+<style>
+   
+    body 
+    { margin: 5px; font-family: Arial, sans-serif; line-height: 1.6; color: #222222; background: #f5f5f5; 
+    }
+
+    h1, h2, h3 
+    { font-family: Georgia, serif; 
+    }
+
+    header, footer 
+    
+    { background: #116d0e; color: white; padding: 1rem; 
+
+    }
+
+    footer 
+    { text-align: center; margin-top: 1px; 
+      margin-bottom: 1px;
+      margin-left: 1px;
+    }
+
+    .logo { font-size: 1.5rem; font-weight: bold; margin: 0; }
+    
+    nav{
+      margin: 14px 14px 0; /* Space around nav, so curve is visible */
+    }
+
+
+    .header{
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      color: #f5f5f5;
+      font-size: 20px;
+
+    }
+    ul {
+       
+      list-style-type: none; /* Removes bullet points */
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Clears floats */
+      background-color: rgb(12, 166, 227); /* Light brown nav background - high contrast with green */
+      border: 5px solid #e5dcdc;
+      border-radius: 20%;
+    
+      
+    }
+
+    li { 
+      float: left; /* Makes list items sit side by side */
+    }
+
+    /* Links inside nav */
+    li a, .dropbtn {
+      display: inline-block; /* Allows padding */
+      color: white; /* White text on orange */
+      text-align: center; /* Center text in link */
+      padding: 14px 16px; /* Clickable area */
+      text-decoration: none; /* Removes underline */
+    }
+
+    /* Hover effect - turns dark green */
+    li a:hover, .dropdown:hover .dropbtn {
+      background-color: var(--dark); /* Dark on hover */
+    }
+
+    /* Dropdown container */
+    li.dropdown {
+      display: inline-block; /* Keeps dropdown inline */
+    }
+
+    /* Dropdown hidden menu */
+    .dropdown-content {
+      display: none; /* Hidden by default */
+      position: absolute; /* Floats over other content */
+      background-color: #f9f9f9; /* Light background */
+      min-width: 160px; /* Minimum width */
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Shadow for depth */
+      z-index: 1; /* Makes it sit on top of everything */
+      border-radius: 10px; /* Slight curve for dropdown */
+      overflow: hidden;
+    }
+
+    /* Links inside dropdown */
+    .dropdown-content a {
+      color: rgb(31, 242, 235);
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block; /* Stack vertically */
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {background-color: #f1f1f1;} /* Light hover */
+
+    .dropdown:hover .dropdown-content {
+      display: block; /* Shows dropdown on hover */
+    }
+    /* Main content stays in a centred column */
+    main { max-width: 800px; margin: 0 auto; padding: 1rem; }
+
+    /* Each notice is a white box */
+    .notice { background: white; border: 1px solid #ccc; padding: 1rem; margin-bottom: 1rem; }
+    .notice h3 { margin: .2rem 0; }
+    .date { color: #555; font-size: .9rem; margin: 0; }
+    .note { color: #555; font-size: .9rem; }
+
+    /* Events table */
+    .table-wrap { overflow-x: auto; }
+
+    table 
+    { 
+    width: 100%; border-collapse: collapse; background: white; }
+    
+    th, td 
+    { 
+      border: 1px solid #ccc; padding: .6rem; text-align: left; }
+    th 
+    { 
+      background: #0c6504; color: white; 
+    }
+
+  
+  </style>
+<!-- JavaScript for filtering schedules -->
+    <script>
+
+        function filterSchedule() {
+
+            const filter = document.getElementById("zoneFilter").value;
+
+            const table = document.getElementById("scheduleTable");
+
+            const rows = table.querySelectorAll("tbody tr");
+
+            const noResults = document.getElementById("noResults");
+
+            let visibleCount = 0;
+
+            rows.forEach(function(row) {
+
+                const zone = row.cells[0].textContent.trim();
+
+                if (filter === "" || zone === filter) {
+
+                    row.style.display = "";
+
+                    visibleCount++;
+
+                } else {
+
+                    row.style.display = "none";
+
+                }
+
+            });
+
+            if (visibleCount === 0) {
+
+                noResults.style.display = "block";
+
+            } else {
+
+                noResults.style.display = "none";
+
+            }
+
+        }
+
+        document.getElementById("zoneFilter")
+            .addEventListener("change", filterSchedule);
+
+    </script>
+
+
+</body>
+</html>
