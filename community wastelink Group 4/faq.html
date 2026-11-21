@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs | Community WasteLink</title>
+    <link rel="icon" type="image/png" href="faq-images/fav1.png">
+<style>
+    /* ===== RESET ===== */
+    *{ margin:0; padding:0; box-sizing:border-box; }
+
+    /* ===== BODY - Dark green from photo ===== */
+    body{
+        background-color: #0B3D2E;
+        font-family: Georgia, 'Times New Roman', serif;
+        color: #222;
+        line-height: 1.6;
+        padding: 10px;
+    }
+
+    /* ===== HEADER - Green + Centered ===== */
+    header{
+        background-color: #0B3D2E;
+        padding: 20px 14px 10px;
+        text-align: center;
+    }
+    header h1{
+        color: #fff;
+        font-size: 2.2rem;
+        letter-spacing: 0.5px;
+        margin-bottom: 6px;
+    }
+    header p{
+        color: #fff;
+        font-size: 1rem;
+        margin-bottom: 18px;
+    }
+
+    /* ===== NAV - Black pill from photo ===== */
+    nav ul{
+        list-style: none;
+        background-color: #000;
+        border-radius: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        padding: 8px 14px;
+    }
+    nav ul li a{
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        padding: 8px 14px;
+        border-radius: 10px;
+        font-size: 1rem;
+    }
+    nav ul li a:hover{
+        background-color: #0B3D2E;
+        color: #FDEBC8;
+    }
+    /* Highlight current page */
+    nav ul li a.active{
+        background-color: #FDEBC8;
+        color: #000;
+        font-weight: bold;
+    }
+
+    /* ===== MAIN CARD - Cream from photo ===== */
+    #faq{
+        background-color: #FDEBC8;
+        border-radius: 16px;
+        padding: 24px 20px;
+        margin: 16px 6px 10px;
+        overflow: hidden;
+    }
+
+    .sec-head small{
+        color: #333;
+        font-size: 0.85rem;
+    }
+    .sec-head h2{
+        font-size: 1.8rem;
+        margin: 6px 0 20px;
+        color: #000;
+    }
+
+    /* ===== DETAILS - FAQ accordion ===== */
+    details{
+        background: #FFFEF7;
+        border: 1.5px solid #e8d5a8;
+        border-radius: 12px;
+        padding: 14px 16px;
+        margin-bottom: 10px;
+    }
+    details summary{
+        font-weight: bold;
+        font-size: 1.05rem;
+        cursor: pointer;
+        color: #0B3D2E;
+    }
+    details p{
+        margin-top: 8px;
+        color: #444;
+    }
+    details[open]{
+        border-color: #0B3D2E;
+    }
+
+    /* ===== GRID + CARDS ===== */
+    .grid{
+        display: flex;
+        gap: 16px;
+        margin-top: 14px;
+        flex-wrap: wrap;
+    }
+    .card{
+        background: #FFFEF7;
+        border: 1.5px solid #e8d5a8;
+        border-radius: 14px;
+        padding: 18px;
+        flex: 1;
+        min-width: 260px;
+    }
+    .card h3{
+        color: #0B3D2E;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+
+    /* ===== FORM ===== */
+    input, textarea{
+        width: 100%;
+        padding: 10px;
+        border: 1.5px solid #ccc;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        font-family: inherit;
+        font-size: 1rem;
+        background: #fff;
+    }
+    textarea{ min-height: 90px; resize: vertical; }
+    .btn{
+        background: #0B3D2E;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        font-family: inherit;
+    }
+    .btn:hover{ opacity: 0.9; }
+
+    /* ===== FOOTER ===== */
+    footer{
+        text-align: center;
+        color: #fff;
+        padding: 14px;
+        font-size: 0.9rem;
+    }
+
+    /* ===== MOBILE ===== */
+    @media(max-width: 700px){
+        header h1{ font-size: 1.7rem; }
+        nav ul{ justify-content: flex-start; }
+        #faq{ padding: 18px 14px; }
+        .grid{ flex-direction: column; }
+    }
+</style>
+</head>
+<body>
+
+ <header>
+     <h1>Community WasteLink</h1>
+     <p>Welcome to Community WasteLink</p>
+     <nav>
+            <ul>
+               <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="report.html">Report a problem</a></li>
+      <li><a href="track-report.html">Track report</a></li>
+        <li><a href="recycling.html">Recycling and material reuse</a></li>
+        <li><a href="Collections.html">Collection points</a></li>
+        <li><a href="wastemanagement.html">Waste seperation and Safe disposal</a></li>
+        <li><a href="Authorised.html">Authorized waste collectors</a></li>
+        <li><a href="notices.html">Notices</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+ </header>   
+
+<section id="faq">
+    <div class="sec-head">
+    
+    <h2>FAQ & Contact</h2>
+</div>
+
+<details>
+    <summary>How much is collection?</summary>
+    <p>10k-20k/month. Pay only licensed collector with ID.</p>
+</details>
+
+<details>
+    <summary>What if pickup is missed?</summary>
+    <p>Report on Report page. You get code WL-KRK-XXXX to track.</p>
+</details>
+
+<details>
+    <summary>What if point is full?</summary>
+    <p>Don't dump outside. Report overflowing bin. Use nearest other point.</p>
+</details>
+
+<details>
+    <summary>Is my photo public?</summary>
+    <p>No. Only authorized staff see it. Privacy protected.</p>
+</details>
+
+<div class="grid" style="margin-top:14px">
+<div class="card">
+    <h3>Official Contacts</h3>
+    <p>KCCA: 0700 000 000<br>LC Kireka: 0780 111 222<br>Email: info@wastelink.ug<br>Office: Kireka Division HQ</p>
+    <p><b>Emergency:</b> Health hazard / flooding: Call 999 / KCCA</p>
+</div>
+
+<div class="card">
+    <h3>Feedback Form</h3>
+    <form onsubmit="alert('Thanks! Feedback saved.'); return false">
+        <input placeholder="Your name">
+        <textarea placeholder="How can we improve site?"></textarea>
+        <button class="btn">Send Feedback</button>
+    </form>
+    </div>
+</div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Community WasteLink - Kireka. Tyson Rutambiika.</p>
+</footer>
+
+</body>
+</html>

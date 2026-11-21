@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NOTICES AND COMMUNITY EVENTS | COMMUNITY WASTELINK</title>
+  <style>
+    /* Page background, text colour and font */
+    body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; color: #222; background: #f5f5f5; }
+
+    /* Headings use a different font */
+    h1, h2, h3 { font-family: Georgia, serif; }
+
+    /* Green bar at the top and bottom */
+    header, footer { background: #1e6b45; color: white; padding: 1rem; }
+    footer { text-align: center; margin-top: 2rem; }
+
+    /* Site name and menu */
+    .logo { font-size: 1.5rem; font-weight: bold; margin: 0; }
+    nav{
+      margin: 14px 14px 0; /* Space around nav, so curve is visible */
+    }
+
+    ul {
+       
+      list-style-type: none; /* Removes bullet points */
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Clears floats */
+      background-color: black; /* Light brown nav background - high contrast with green */
+      border-radius: var(--radius); /* CURVED - same as main */
+      
+    }
+
+    li { 
+      float: left; /* Makes list items sit side by side */
+    }
+
+    /* Links inside nav */
+    li a, .dropbtn {
+      display: inline-block; /* Allows padding */
+      color: white; /* White text on orange */
+      text-align: center; /* Center text in link */
+      padding: 14px 16px; /* Clickable area */
+      text-decoration: none; /* Removes underline */
+    }
+
+    /* Hover effect - turns dark green */
+    li a:hover, .dropdown:hover .dropbtn {
+      background-color: var(--dark); /* Dark on hover */
+    }
+
+    /* Dropdown container */
+    li.dropdown {
+      display: inline-block; /* Keeps dropdown inline */
+    }
+
+    /* Dropdown hidden menu */
+    .dropdown-content {
+      display: none; /* Hidden by default */
+      position: absolute; /* Floats over other content */
+      background-color: #f9f9f9; /* Light background */
+      min-width: 160px; /* Minimum width */
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Shadow for depth */
+      z-index: 1; /* Makes it sit on top of everything */
+      border-radius: 10px; /* Slight curve for dropdown */
+      overflow: hidden;
+    }
+
+    /* Links inside dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block; /* Stack vertically */
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {background-color: #f1f1f1;} /* Light hover */
+
+    .dropdown:hover .dropdown-content {
+      display: block; /* Shows dropdown on hover */
+    }
+    /* Main content stays in a centred column */
+    main { max-width: 800px; margin: 0 auto; padding: 1rem; }
+
+    /* Each notice is a white box */
+    .notice { background: white; border: 1px solid #ccc; padding: 1rem; margin-bottom: 1rem; }
+    .notice h3 { margin: .2rem 0; }
+    .date { color: #555; font-size: .9rem; margin: 0; }
+    .note { color: #555; font-size: .9rem; }
+
+    /* Events table */
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; background: white; }
+    th, td { border: 1px solid #ccc; padding: .6rem; text-align: left; }
+    th { background: #1e6b45; color: white; }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="logo">Community WasteLink</p>
+   <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="report.html">Report a problem</a></li>
+      <li><a href="track-report.html">Track report</a></li>
+        <li><a href="recycling.html">Recycling and material reuse</a></li>
+        <li><a href="Collections.html">Collection points</a></li>
+        <li><a href="wastemanagement.html">Waste seperation and Safe disposal</a></li>
+        <li><a href="Authorised.html">Authorized waste collectors</a></li>
+        <li><a href="notices.html">Notices</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+  </header>
+
+  <main>
+    <h1>Notices and Community Events</h1>
+    <p>Read the latest notices and find upcoming clean-up days in your community.</p>
+    <p class="note">Find all updates and notices from here, added by our communications department</p>
+    <h2>Notices</h2>
+
+    <div class="notice">
+      <p class="date">9 November 2026</p>
+      <h3>Collection day changed</h3>
+      <p>The collection truck will come on Thursday this week instead of Wednesday. Please take your waste to the collection point early.</p>
+    </div>
+
+    <div class="notice">
+      <p class="date">5 November 2026</p>
+      <h3>Keep drains clear</h3>
+      <p>Do not throw plastic bags or bottles into drains. Blocked drains cause flooding.</p>
+    </div>
+
+    <div class="notice">
+      <p class="date">2 November 2026</p>
+      <h3>Collection delayed by rain</h3>
+      <p>Collection may be late on Monday. Keep your waste in a closed bag until the truck comes.</p>
+    </div>
+
+    <!-- 4. EVENTS: -->
+    <h2>Community Events</h2>
+
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Event</th>
+          <th>Place</th>
+          <th>Time</th>
+        </tr>
+        <tr>
+          <td>14 Nov 2026</td>
+          <td>Drain clean-up</td>
+          <td>Central Market</td>
+          <td>8:00 AM</td>
+        </tr>
+        <tr>
+          <td>21 Nov 2026</td>
+          <td>Community clean-up day</td>
+          <td>Near Kyambogo University</td>
+          <td>8:00 AM</td>
+        </tr>
+        <tr>
+          <td>28 Nov 2026</td>
+          <td>Waste sorting demonstration</td>
+          <td>Total petrol station</td>
+          <td>9:00 AM</td>
+        </tr>
+      </table>
+    </div>
+
+  </main>
+  <footer>
+    <p>&copy; 2026 Community WasteLink - Kireka. All rights reserved.</p>
+    <p>Kimumwe Douglas.</p>
+  </footer>
+
+</body>
+</html>
