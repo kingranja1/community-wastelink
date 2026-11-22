@@ -349,8 +349,8 @@
         document.getElementById("reportForm").addEventListener("submit", function (event) {
             event.preventDefault(); // stops the page from reloading
 
-            // Make a reference like WL-482913 (WL + a random 6-digit number)
-            var reference = "WL-" + Math.floor(100000 + Math.random() * 900000);
+            
+            var reference = "CWL-2026-" + Math.floor(10000 + Math.random() * 900000);
 
             // Show it, and swap the form for the confirmation box
             document.getElementById("refNumber").textContent = reference;
