@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community WasteLink</title>
+    <link rel="icon" type="image/png" href="Images-Recycling/Logo Icon.png">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #17352c;
+            background-color: #f5f8f4;
+        }
+
+        /* Header and navigation */
+        header {
+            background-color: #064e3b;
+            color: white;
+            padding: 0 4% 0 0;
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 30%;
+            background-color: white;
+            color: #064e3b;
+            padding: 10px 20px 10px 4%;
+            border-radius: 0 80px 80px 0;
+            flex-shrink: 0;
+        }
+
+        .logo-icon {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .logo h1 {
+            font-size: 22px;
+            line-height: 1;
+            margin: 0;
+        }
+
+        .logo p {
+            font-size: 13px;
+            margin: 5px 0 0;
+        }
+
+        nav {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            align-items: flex-end;
+            align-self: center;
+            gap: 3px;
+        }
+
+        .nav-row {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 6px 8px;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+
+        nav a:hover {
+            background-color: #a3e635;
+           color: #064e3b;
+        }
+
+        /* Hero banner */
+        .hero {
+            min-height: 330px;
+            background-image:
+                linear-gradient(90deg, rgba(0, 40, 25, 0.88), rgba(0, 40, 25, 0.08)),
+                url(Images-Recycling/Trash-Bins.jpeg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 35px 8%;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 550px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            line-height: 1;
+            margin: 0 0 10px;
+        }
+
+        .hero h2 span {
+            color: #a3e635;
+        }
+
+        .hero h3 {
+            color: #e4f8cc;
+            font-size: 24px;
+            font-style: italic;
+            margin: 10px 0;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.4;
+            font-weight: bold;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #078344;
+            color: white;
+            padding: 11px 22px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #a3e635;
+            color: #064e3b;
+        }
+
+        /* Main information cards */
+        .container {
+            width: 96%;
+            max-width: 1300px;
+            margin: 20px auto;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid transparent;
+            transition: border-color 0.3s;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 2px 7px;
+
+        }
+
+        .card h3 {
+            background-color: #07533f;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            min-height: 44px;
+            margin: 0;
+            padding: 13px 10px;
+        }
+
+        .card img {
+            display: block;
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 10px 15px 12px;
+            min-height: 135px;
+        }
+
+        .card p {
+            font-size: 14px;
+            line-height: 1.4;
+            margin: 5px 0;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .card li {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .card li::before {
+            content: "✅ ";
+        }
+
+        .card .button {
+            display: table;
+            margin: 10px auto 0;
+            padding: 8px 18px;
+        }
+
+        .card:hover {
+            border-color: #16a34a;
+            transform: translateY(-5px);
+        }
+
+         /* Section headings */
+        .section-heading {
+            background-color: #064e3b;
+            color: white;
+            text-align: center;
+            font-size: 26px;
+            padding: 14px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Recycling opportunities section */
+        .contacts-section {
+            background-color: #f1f3f1;
+            padding: 30px 20px;
+            border-radius: 14px;
+            margin: 25px auto;
+        }
+
+        .company-container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .company-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .company-card {
+            background-color: white;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            padding: 20px;
+            transition: 0.3s ease;
+            box-shadow: 0 2px 7px;
+        }
+
+        .company-card:hover {
+            transform: translateY(-6px);
+            border-color: #025129;
+            box-shadow: 0 5px 15px;
+        }
+
+        .company-card h3 {
+            color: #078344;
+            margin-bottom: 12px;
+        }
+
+        .company-card p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 5px 0;
+        }
+
+        .contact-link {
+            display: inline-block;
+            margin-top: 12px;
+            background-color: #078344;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .contact-link:hover {
+            background-color: #a3e635;
+            color: #064e3b;
+        }
+
+        .notice {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #355b46;
+        }
+
+        /* Get involved section */
+        .community-section {
+            background-color: #d0d3d1;
+            padding: 30px 20px;
+            border-radius: 14px;
+            margin: 25px auto;
+        }
+
+        .activity-container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .activity-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .activity-card {
+            background-color: white;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            padding: 25px 20px;
+            transition: 0.3s ease;
+            box-shadow: 0 2px 7px;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-6px);
+            border-color: #078344;
+            box-shadow: 0 5px 15px;
+        }
+
+        .activity-card h3 {
+            color: #078344;
+            margin-bottom: 10px;
+        }
+
+        .activity-card p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .community-note {
+            text-align: center;
+            margin-top: 20px;
+            color: #07533f;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #002d49;
+            color: white;
+            text-align: center;
+        }
+
+        .footer-info {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 16px 10px;
+        }
+
+        .footer-info p {
+            margin: 0;
+        }
+
+        .copyright {
+            border-top: 1px solid white;
+            padding: 10px;
+            margin: 0;
+            font-size: 13px;
+        }
+
+    /* Adjust the layout for tablets and phones */
+    @media (max-width: 950px) {
+
+        header {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0;
+            padding: 0;
+        }
+
+        .logo {
+            width: 100%;
+            padding: 10px 5%;
+            border-radius: 0 0 30px 0;
+        }
+
+        nav {
+            width: 100%;
+            align-items: center;
+            padding: 8px 10px;
+        }
+
+        .nav-row {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        nav a {
+            white-space: normal;
+            text-align: center;
+        }
+    
+        .cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .company-cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .cards {
+            grid-template-columns: 1fr;
+        }
+
+        .hero {
+            min-height: 310px;
+            padding: 25px;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+        }
+
+        .impact div {
+            flex: 1 1 45%;
+            border: none;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <section class="logo">
+            <img class="logo-icon" src="Images-Recycling/Logo Icon.png" alt="Community WasteLink Logo">
+            <div>
+                <h1>Community<br>WasteLink</h1>
+                <p>Cleaner Kireka, Healthier Kampala</p>
+            </div>
+        </section>
+
+    <nav>
+        <div class="nav-row">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="report.html">Report a Problem</a>
+            <a href="track-report.html">Track Report</a>
+            <a href="recycling.html">Recycling</a>
+        </div>
+
+        <div class="nav-row">
+            <a href="Collections.html">Collection points</a>
+            <a href="wastemanagement.html">Waste separation and Safe disposal</a>
+            <a href="Authorised.html">Authorized waste collectors</a>
+            <a href="notices.html">Notices</a>
+            <a href="faq.html">FAQ</a>
+        </div>
+            
+    </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Recycling &<br><span>Material Reuse</span></h2>
+                <h3>Reduce · Reuse · Recycle</h3>
+
+                <p>
+                    Together, let's give waste a new life<br>
+                    and keep Kireka clean and green!
+                </p>
+                <br>
+
+                <a class="button" href="#materials">Learn How →</a>
+            </div>
+        </section>
+
+        <!-- Four information cards -->
+        <section class="container" id="materials">
+
+            <section class="cards">
+
+                <article class="card">
+                    <h3>1. What Can Be Recycled?</h3>
+                    <img src="Images-Recycling/Materials.jpeg"
+                         alt="Plastic bottles, cans and cardboard">
+
+                    <div class="card-content">
+                        <ul>
+                            <li>Plastic bottles and containers</li>
+                            <li>Metal cans</li>
+                            <li>Cardboard and paper</li>
+                            <li>Glass bottles and jars</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>2. How to Prepare Them</h3>
+                    <img src="Images-Recycling/Separating Materials.jpeg"
+                         alt="Preparing recyclable items">
+
+                    <div class="card-content">
+                        <ul>
+                            <li>Empty and rinse containers</li>
+                            <li>Keep materials dry</li>
+                            <li>Separate different materials</li>
+                            <li>Avoid hazardous waste</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>3. Recycling Opportunities</h3>
+                    <img src="Images-Recycling/Recycling Bins.jpg"
+                         alt="Recycling collection point">
+
+                    <div class="card-content">
+                        <p>Find recycling buyers and collection centres in Kampala.</p>
+                        <a class="button" href="#contacts">View Contacts →</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <h3>4. Community Activities</h3>
+                    <img src="Images-Recycling/Community Activities.jpeg"
+                         alt="People taking part in a community activity">
+
+                    <div class="card-content">
+                        <p>Join local clean-up and recycling activities.</p>
+                        <a class="button" href="#community">Get Involved →</a>
+                    </div>
+                </article>
+
+            </section>
+        </section>
+
+        <!-- Recycling opportunities and company contacts -->
+        <section class="contacts-section" id="contacts">
+
+            <div class="company-container">
+
+                <h2 class="section-heading">
+                    Recycling Centres and Opportunities
+                </h2>
+
+                <div class="company-cards">
+
+                    <article class="company-card">
+                        <h3>Waste to Green Ltd</h3>
+                        <p><strong>Location:</strong> LICO Holding Complex,
+                           Room B10, Kireka, Jinja Road</p>
+                        <p><strong>Materials:</strong> Plastics, paper and cardboard</p>
+                        <p><strong>Phone:</strong> +256 752 641649</p>
+                    </article>
+
+                    <article class="company-card">
+                        <h3>Scrap Matters UG Ltd</h3>
+                        <p><strong>Location:</strong> Segawa Market, Kampala</p>
+                        <p><strong>Materials:</strong> Scrap and recyclable materials</p>
+                        <p><strong>Phone:</strong> +256 706 253919</p>
+                        </a>
+                    </article>
+
+                    <article class="company-card">
+                        <h3>Paper and Old Books Buyers</h3>
+                        <p><strong>Location:</strong> Villa Park, Mukwano Road, Kampala</p>
+                        <p><strong>Materials:</strong> Waste paper and old books</p>
+                        <p><strong>Phone:</strong> +256 706 650546</p>
+                        </a>
+                    </article>
+
+                    <article class="company-card">
+                        <h3>WastePlus</h3>
+                        <p><strong>Location:</strong> Plot 79, Luthuli Avenue, Bugolobi</p>
+                        <p><strong>Materials:</strong> Selected plastics, including PET</p>
+                        <p><strong>Phone:</strong> +256 708 778507</p>
+                        </a>
+                    </article>
+
+                </div>
+
+                <p class="notice">
+                    Contact the companies first to confirm accepted materials
+                    and their collection or drop-off arrangements.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- Get involved section -->
+        <section class="community-section" id="community">
+
+            <div class="activity-container">
+
+                <h2 class="section-heading">
+                    Get Involved in Your Community
+                </h2>
+
+                <div class="activity-cards">
+
+                    <article class="activity-card">
+                        <h3>Community Clean-ups</h3>
+                        <p>
+                            Join residents to clean streets, drainage channels
+                            and public spaces.
+                        </p>
+                    </article>
+
+                    <article class="activity-card">
+                        <h3>Recycling Drives</h3>
+                        <p>
+                            Collect and separate recyclable materials such as
+                            plastics, paper and metal.
+                        </p>
+                    </article>
+
+                    <article class="activity-card">
+                        <h3>Environmental Awareness</h3>
+                        <p>
+                            Encourage people to practise proper waste disposal
+                            and keep their surroundings clean.
+                        </p>
+                    </article>
+
+                </div>
+
+                <p class="community-note">
+                    Be Part of the Solution! Together, we can make Kireka cleaner.
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+    
+    <footer>
+        <div class="footer-info">
+            <strong> Community WasteLink</strong>
+            <p>📍 Kireka, Kampala, Uganda</p>
+            <p>📩 info@wastelink.ug</p>
+        </div>
+
+        <p class="copyright">
+            &copy; Abdus Sazid <br>2026 Community WasteLink. Working Together for a Cleaner Environment.
+        </p>
+    </footer>
+</body>
+</html>
