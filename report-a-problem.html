@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report a Waste Problem</title>
+    <link rel="icon" type="image/x-icon" href="images-report/favicon.jpeg">
+    <style>
+        :root{
+            --dark:#0B3D2E;
+            --green:#0E7A4F;
+            --light:#E7F6EE;
+            --radius:16px;
+        }
+
+        *{
+            box-sizing: border-box;
+        }
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--light);
+            color: #1A2A22;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        main{
+            min-height: 100vh;
+            background: #fff;
+        }
+
+        
+        nav{
+            position: sticky;            
+            top: 0;
+            z-index: 1000;               
+            background-color: #07503E;   
+            color: #fff;
+            padding: 8px 40px 4px;
+        }
+
+        
+        .brand{
+            display:inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .brand img{
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            background: #fff;
+            border-radius: 4px;
+            margin-top: 2px;
+        }
+
+        .brand-name{
+            display: block;
+            max-width: 140px;           
+            font-size: 21px;
+            font-weight: bold;
+            line-height: 1.1;
+            color: #fff;
+        }
+
+        .brand-tagline{
+            display: block;
+            margin-top: 4px;
+            font-size: 13px;
+            color: #fff;
+        }
+
+        
+        nav ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav a{
+            display: block;
+            color: #fff;
+            padding: 6px 14px;
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 3px solid transparent;
+        }
+
+        nav a:hover,
+        nav a:focus{
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #fff;
+        }
+
+        
+        nav a.active{
+            border-bottom-color: #fff;
+        }
+
+    
+        section{
+            min-width: 0;
+            padding: 30px;
+            max-width: 700px;
+            margin: 0 auto;           
+        }
+
+        .sec-head h2{
+            color: var(--dark);
+            margin-top: 0;
+        }
+
+        .note{
+            margin-top: 0;
+            color: #4a5d53;
+        }
+
+        fieldset{
+            min-width: 0;
+            border: 1.5px solid #cbd5cf;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            padding: 10px 20px;
+        }
+
+        legend{
+            font-weight: bold;
+            color: var(--dark);
+            padding: 0 8px;
+        }
+
+        label{
+            font-weight: bold;
+        }
+
+        input, select, textarea{
+            width: 100%;
+            padding: 13px;
+            margin: 6px 0;
+            border: 1.5px solid #cbd5cf;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        textarea{
+            resize: vertical;
+        }
+
+        
+        input:focus, select:focus, textarea:focus{
+            outline: none;
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(14, 122, 79, 0.25);
+        }
+
+        .required{
+            color: #c62828;
+        }
+
+        button{
+            background: var(--green);
+            color: #fff;
+            border: none;
+            padding: 14px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover,
+        button:focus{
+            background: var(--dark);
+        }
+
+        
+        #confirmation{
+            display: none; 
+            border: 2px solid var(--green);
+            border-radius: var(--radius);
+            background: var(--light);
+            padding: 20px;
+            text-align: center;
+            max-width: 500px;
+            margin: 40px auto; 
+        }
+
+        #confirmation h3{
+            color: var(--dark);
+            margin-top: 0;
+        }
+
+        .ref-number{
+            display: inline-block;
+            background: #fff;
+            border: 2px dashed var(--green);
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: var(--dark);
+            margin: 10px 0;
+        }
+
+        
+        footer{
+            background: rgb(46, 125, 91);
+            color: #fff;
+            padding: 12px 20px;
+        }
+
+        footer p{
+            margin: 0;
+            text-align: center;
+        }
+
+        
+        @media (max-width: 700px){
+            nav{ padding: 10px 16px 6px; }
+            .brand-name{ font-size: 19px; max-width: 130px; }
+            nav ul{ flex-direction: column; }
+            nav a{ padding: 10px 8px; font-size: 16px; }
+            section{ padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <nav>
+            <div class="brand">
+                <img src="images-report/favicon.jpeg" alt="Community WasteLink logo">
+                <div class="brand-text">
+                    <span class="brand-name">Community WasteLink</span>
+                    <span class="brand-tagline">For a cleaner Kireka.</span>
+                </div>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="report-a-problem.html" class="active">Report a problem</a></li>
+                <li><a href="track-report.html">Track report</a></li>
+                <li><a href="recycling.html">Recycling and material reuse</a></li>
+                <li><a href="Collections.html">Collection points</a></li>
+                <li><a href="wastemanagement.html">Waste separation and Safe disposal</a></li>
+                <li><a href="Authorised.html">Authorized waste collectors</a></li>
+                <li><a href="notices.html">Notices</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+
+        <section id="report">
+            <div class="sec-head">
+                <h2>Report a Waste Problem</h2>
+            </div>
+            <p class="note" id="requiredNote">Fields marked <span class="required">*</span> are required.</p>
+
+            <form id="reportForm">
+                <fieldset>
+                    <legend>The problem</legend>
+                    <p>
+                        <label for="rType">Problem type <span class="required">*</span></label><br>
+                        <select id="rType" name="problemType" required>
+                            <option value="">--- Select a problem type ---</option>
+                            <option>Missed pickup</option>
+                            <option>Illegal dumping</option>
+                            <option>Overflowing point</option>
+                            <option>Blocked drain</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="rVillage">Village/Zone <span class="required">*</span></label><br>
+                        <select id="rVillage" name="village" required>
+                            <option value="">--- Select Village/Zone ---</option>
+                            <option>Kireka Central</option>
+                            <option>Kireka Hill</option>
+                            <option>Banda A</option>
+                            <option>Banda B</option>
+                            <option>Kinawataka</option>
+                            <option>Acholi Quarters</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="landmark">Landmark <span class="required">*</span></label><br>
+                        <input id="landmark" name="landmark" placeholder="e.g Kireka Market" required>
+                    </p>
+                    <p>
+                        <label for="description">Description <span class="required">*</span></label><br>
+                        <textarea id="description" name="description" rows="3" placeholder="e.g How long? How big? Smell/flooding?" required></textarea>
+                    </p>
+                    <p>
+                        <label for="date">Date observed <span class="required">*</span></label><br>
+                        <input type="date" id="date" name="date" required>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Optional</legend>
+                    <p>
+                        <label for="photo">Photo</label><br>
+                        <input type="file" id="photo" name="photo" accept="image/*">
+                    </p>
+                    <p>
+                        <label for="phone">Phone</label><br>
+                        <input type="tel" id="phone" name="phone" placeholder="e.g 0700 000 000">
+                    </p>
+                    <p>
+                        <label for="email">Email</label><br>
+                        <input type="email" id="email" name="email" placeholder="e.g you@example.com">
+                    </p>
+                </fieldset>
+
+                <p>
+                    <button type="submit">Submit report</button>
+                </p>
+            </form>
+
+            <!-- Shown after the report is submitted -->
+            <div id="confirmation">
+                <h3>Thank you! Your report has been received.</h3>
+                <p>Your reference number is:</p>
+                <p class="ref-number" id="refNumber"></p>
+                <p>Please write it down. You will need it to track your report.</p>
+                <button type="button" onclick="location.reload()">Submit another report</button>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Community WasteLink - Kireka. All rights reserved. - Kirabo Hildah</p>
+        </footer>
+    </main>
+
+    <script>
+        // Runs when "Submit report" is clicked (after the required fields are filled in)
+        document.getElementById("reportForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // stops the page from reloading
+
+            // Make a reference like WL-482913 (WL + a random 6-digit number)
+            var reference = "WL-" + Math.floor(100000 + Math.random() * 900000);
+
+            // Show it, and swap the form for the confirmation box
+            document.getElementById("refNumber").textContent = reference;
+            this.style.display = "none";
+            document.getElementById("requiredNote").style.display = "none";
+            document.getElementById("confirmation").style.display = "block";
+        });
+    </script>
+</body>
+</html>
